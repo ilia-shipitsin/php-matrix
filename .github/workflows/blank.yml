@@ -23,7 +23,7 @@ jobs:
       image: mongo:${{ matrix.mongodb_version }}
     strategy:
       matrix:
-        mongodb_version: ["4.2", "4.3"]
+        mongodb_version: ["4.2", "4.4"]
         
     steps:
       - uses: actions/checkout@v3
