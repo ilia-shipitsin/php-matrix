@@ -16,4 +16,18 @@ jobs:
 
       - name: Run a one-line script
         run: php --version
+        
+  mongo:
+    runs-on: ubuntu-latest
+    container:
+      image: mongo:${{ matrix.mongodb_version }}
+    strategy:
+      matrix:
+        mongodb_version: ["4.2", "4.3"]
+        
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run a one-line script
+        run: mongod -version
 
